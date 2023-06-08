@@ -256,172 +256,140 @@
          </div>
          <div id="layoutSidenav_content">
             <main>
-               <div class="container-fluid"> <form name="frmUser" method="get" action="preview_student.php" enctype="multipart/form-data" >
-<div class="mt-4 mb-3 page-title"> 
-	
-   <div class="row">
- 
-      <div class="col-md-7 m-auto">
-        Welcome to explore E-TCMS 1.0.1
-      </div>
-      <div class="col-md-3 text-right">
-        <input type="number" class="form-control" name="id" Placeholder="Enter Admission ID" autofocus >
-      </div>
-	       <div class="col-md-2 text-right">
-		    <input type="submit" name="submit" Value="Search" class="btn btn-primary btn-block ">
-		    </div>
-			
-   </div>
-   </form>
-</div>
-  <div class="wedget-statistic mb-3">
-<div class="row">
- <!--- Bill statisticS --->
-   <div class="col-md-3 col-xl-3">
-   <div class="bg-c-blue">
- 
-            <h1 class="text-right"><i class="fas fa-sync-alt f-left"></i>  <span style="font-size:15px;"> Unverified </span> </h1>
-        
+                <div class="container-fluid"><SCRIPT src="http://code.jquery.com/jquery-2.1.1.js"></SCRIPT>
+ <div class="mt-4  mb-2 page-title">
+    <div class="row">
+       <div class="col-md-8 my-auto"> Invoice <i class="fas fa-angle-right"></i> New Invoice   </div>
+       <div class="col-md-4 text-right"> <a href="list_invoice.php" class="btn btn-outline-primary float-right"> <i class="fas fa-folder-open"></i> List Invoice </a> </div>
+    </div>
+ </div>
+ <form name="frmUser" method="post" action="" class="calculate" enctype="multipart/form-data" oncChange="add_calcualte ()"  >
+    <div class="card mb-3 pb-1">
+       <div class="card-body  pb-0">
+          <div class="row">
+             <div class="form-group col-md-2">
+                <label for="inputEmail4">Date </label>
+                <input type="date" class="form-control" name="d_ate" value="2023-06-08" >
+             </div>
+             <div class="form-group col-md-3">
+                <label for="inputEmail4">Name </label>
+                <input type="text" class="form-control"   name="customer" >
+             </div>
+             <div class="form-group col-md-4">
+                <label for="inputEmail4">Address</label>
+                <input type="text" class="form-control"    name="address" >
+             </div>
+             <div class="form-group col-md-3">
+                <label for="inputEmail4">Mobile </label>
+                <input type="text" class="form-control"    name="mobile" >
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="row">
+    <div class="col-md-9">
+    <div class="card mb-1 pb-1" >
+       <div class="card-body  pb-1"  >
+          <div class="row row-style">
+             <div class="col-md-1 text-center">
+                <a  class="btn btn-light btn-blcok btn-sm" name="del_item" onClick="deleteRow();"> <i class="fas fa-trash "></i>  </a> 
+             </div>
+             <div class="col-md-4">
+                <label>Description </label>
+             </div>
+             <div class="col-md-2">
+                <label>Quantity </label>
+             </div>
+             <div class="col-md-2">
+                <label> Price  </label>
+             </div>
+             <div class="col-md-2">
+                <label>Sub Total</label>
+             </div>
+             <div class="col-md-1"> </div>
+          </div>
+          <div class="all">
+             <div class="formi">
+                <div class="row items ">
+                   <div class="form-group  col-md-1 text-center">
+                      <input type="checkbox" class="checkmark text-center add" name="item_index[]" >
+                   </div>
+                   <div class="form-group  col-md-4">
+                      <input class="form-control add" type="text" name="description[]">
+                   </div>
+                   <div class="form-group  col-md-2">
+                      <input class="form-control qty" type="text" name="qty[]">
+                   </div>
+                   <div class="form-group  col-md-2">
+                      <input class="form-control rate" type="text" name="rate[]">
+                   </div>
+                   <div class="form-group  col-md-2">
+                      <input class="form-control amount" type="text" name="amount[]" readonly>
+                   </div>
+                   <div class="form-group  col-md-1">
+                       <span class="instl btn btn-outline-primary "><i class="fas fa-plus "></i> </span>  
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card mb-1 pb-1">
+        <div class="card-body  pb-1"  >
     
-            <br><a class="text-dark"href="list_new_applicaion.php">Pending Admission <span class="f-right">
-			2   </a></span>
-			   
-			   
-			     <br><a class="text-dark" href="list_free_collection_unverified.php">  Unauthorised Payment <span class="f-right">
-				 0   </a></span>
-			   
-			   
-     
-      </div>
-   </div>
-   <!--- Bill statisticS --->
-   
-   <!--- client statisticS --->
-   <div class="col-md-3 col-xl-3">
-      <div class="bg-c-blue">
- 
-            <h1 class="text-right"><i class="fas fa-user-graduate f-left"></i> <span style="font-size:15px;"> Student Info </span> </h1>
-            <br>
-           <a class="text-dark" href="list_admission.php"> Current Student</a>
-		   <span class="f-right">
-               105            </span>
-            <br>
-			<a class="text-dark" href="list_course_completed.php">Ex Students</a> 
-			<span class="f-right"> 
-			
-			81 
-			   </span>
-         
-   
-      </div>
-   </div>
-   <!--- client statisticS --->
-  
-     <!--- Day statisticS --->
-   <div class="col-md-3 col-xl-3">
-      <div class="bg-c-blue">
- 
-            <h1 class="text-right"><i class="fas fa-file-invoice f-left"></i> <span style="font-size:15px;"> Payment Info </span> </h1>
-            <br>
-            Today Fees Received<span class="f-right">
-                           </span>
-            <br><a class="text-dark" href="report_fees_dues.php">  Total Dues Payment </a>  <span class="f-right"> 
-			
-			-325500 
-			   </span>
-         
-   
-      </div>
-   </div>
-    <!--- Day statisticS --->
-	
-   <!--- Day statisticS --->
-   <div class="col-md-3 col-xl-3">
-     <div class="bg-c-blue">
- 
-            <h1 class="text-right"><i class="fas fa-chart-line f-left"></i> <span style="font-size:15px;"> General Account</span> </h1>
-            <br>
-            Income Today<span class="f-right">  </span>
-          
-			  <br> Expense Today<span class="f-right">  </span>
-        
-      </div>
-   </div>
-   </div>
-   </div>
-   <!--- Day statisticS --->
-
-<div class="row">
-   <div class="col-xl-6">
-      <div class="card mb-3">
-         <div class="card-header">
-            <i class="fas fa-chart-area mr-1"></i>
-           Collection Flow
-         </div>
-         <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="40"></canvas>
-         </div>
-      </div>
-   </div>
-   <div class="col-xl-6">
-      <div class="card mb-3">
-         <div class="card-header">
-            <i class="fas fa-chart-pie mr-1"></i>
-          Course Wise Admission
-         </div>
-         <div class="card-body">
-            <canvas id="myPieChart" width="100%" height="40"></canvas>
-         </div>
-      </div>
-   </div>
-</div>
-
-
-<div class="row">
-
- 
-
-
-   <div class="col-xl-6">
-      <div class="card mb-4">
-         <div class="card-header">
-            <i class="fas fa-check mr-1"></i>
-            Receiveable Fees Today
-         </div>
-         <div class="card-body">
-            <div style="overflow-y: scroll; max-height: 175px; padding-right: 30px;">
+        <div class="col-md-12 form-group">
+                <label class="sr-only" for="payable"> Total </label>
+                <div class="input-group mb-0 mr-sm-0">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" style="width: 100px;">Total</div>
+                </div>
+                <input class="form-control text-success text-right font-weight-bold total" type="text" id="total" name="total">
+                </div>
+            </div>
             
-
-               <ul>
-
-                  There are no installments today
-               </ul>
+            
+                <div class="col-md-12 form-group">
+                <label class="sr-only" for="payable">Paid </label>
+                <div class="input-group mb-0 mr-sm-0">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" style="width: 100px;">Paid </div>
+                </div>
+                <input class="form-control text-success text-right font-weight-bold paid" type="text" id="paid" name="paid" autocomplete="off">
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
-
-
-
-   <div class="col-xl-6">
-      <div class="card mb-4">
-         <div class="card-header">
-            <i class="fas fa-check-circle mr-1"></i>
-         Today's  Fees Collection
-         </div>
-         <div class="card-body">
-            <div style="overflow-y: scroll; max-height: 175px; padding-right: 30px;">
-                              <ul>
-                  No Collection Yet
-               </ul>
+            
+            
+                        <div class="col-md-12 form-group">
+                <label class="sr-only" for="payable">Due</label>
+                <div class="input-group mb-0 mr-sm-0">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" style="width: 100px;">Due</div>
+                </div>
+                <input class="form-control text-success text-right font-weight-bold due" type="text" id="due" name="due" autocomplete="off">
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
-
-</div>
- </main>
- 
+            
+            
+    
+                                        
+                                        
+                                                
+    <div class="form-group col-md-12">         
+        <label for="inputEmail4">Remark </label> 
+        <textarea type="text" class="form-control" name="remark" ></textarea>
+    </div>
+    </div>
+    <div class="card-footer">
+    <input type="hidden" readonly class="form-control" name="unique_id" value="1686236745"  >
+    <input type="submit" class="btn btn-success add" name="save" value="Save" />
+    <input type="reset" class="btn btn-secondary"  value="Reset" />
+          
+    </div>
+    
+    </form>
+  </main>
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
@@ -445,154 +413,104 @@
  
 
 	  <!-- Edtor -->
- <script type="text/javascript">
-     $(document).ready(function() {
-         $('#code_preview0').summernote({
-             height: 300
-         });
-     });
-
-
- </script>
- 
-   </body>
-<script>
-   // Set new default font family and font color to mimic Bootstrap's default styling
-   Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-   Chart.defaults.global.defaultFontColor = '#292b2c';
-   // Pie Chart Example
-   var ctx = document.getElementById("myPieChart");
-   var myPieChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-         labels: [
-             "Computer Hardware",
-             "Diploma In Graphic Design",
-             "Motion Graphics & VFX",
-             "Office Application [Basic]",
-             "Professional Web Design ",
-             "Spoken English",
-                     ],
-         datasets: [{
-            data: [
-                                    1,
-                                    41,
-                                    1,
-                                    137,
-                                    6,
-                                    1,
-                           ],
-            backgroundColor: ['#007bff', '#dc3545', '#242424', '#28a745'],
-         }],
-      },
-   });
-</script>
-
-<script>
-   // Set new default font family and font color to mimic Bootstrap's default styling
-   Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-   Chart.defaults.global.defaultFontColor = '#292b2c';
-   // Area Chart Example
-   var ctx = document.getElementById("myAreaChart");
-   var myLineChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-         labels: [
-             "2023-03-11",
-             "2023-03-13",
-             "2023-03-14",
-             "2023-03-15",
-             "2023-03-16",
-             "2023-03-17",
-             "2023-03-23",
-             "2023-03-26",
-             "2023-04-01",
-             "2023-04-02",
-             "2023-04-04",
-             "2023-04-10",
-             "2023-04-27",
-             "2023-05-01",
-             "2023-05-02",
-                     ],
-         datasets: [{
-            label: "Amount",
-            lineTension: 0.3,
-            backgroundColor: "rgba(2,117,216,0.2)",
-            borderColor: "rgba(2,117,216,1)",
-            pointRadius: 5,
-            pointBackgroundColor: "rgba(2,117,216,1)",
-            pointBorderColor: "rgba(255,255,255,0.8)",
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "rgba(2,117,216,1)",
-            pointHitRadius: 50,
-            pointBorderWidth: 2,
-            data: [
-                                    3000,
-                                    7000,
-                                    152500,
-                                    3000,
-                                    7500,
-                                    500,
-                                    5000,
-                                    6000,
-                                    2500,
-                                    3500,
-                                    2000,
-                                    500,
-                                    6500,
-                                    500,
-                                    6500,
-                           ],
-         }],
-      },
-      options: {
-         scales: {
-            xAxes: [{
-               time: {
-                  unit: 'date'
-               },
-               gridLines: {
-                  display: false
-               },
-               ticks: {
-                  maxTicksLimit: 7
-               }
-            }],
-            yAxes: [{
-               ticks: {
-                  min: 0,
-                  
-                  maxTicksLimit: 8
-               },
-               gridLines: {
-                  color: "rgba(0, 0, 0, .125)",
-               }
-            }],
-         },
-         legend: {
-            display: false
-         }
-      }
-   });
-</script>
-
-
-
-
-
-<script>
-    $(function(){
-      // bind change event to select
-      $('#dynamic_select').on('change', function () {
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              window.location = url; // redirect
+      <script type="text/javascript">
+        $(document).ready(function() {
+            $('#code_preview0').summernote({
+                height: 300
+            });
+        });
+   
+   
+    </script>
+    
+      </body><script type="text/javascript">
+      /// Start Enter Button Disable
+      
+         function stopRKey(evt) {
+          var evt = (evt) ? evt : ((event) ? event : null);
+          var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+          if ((evt.keyCode == 13) && (node.type == "number")) {
+              return false;
           }
-          return false;
-      });
-    });
- 
-
-</script>
+          if ((evt.keyCode == 13) && (node.type == "text")) {
+              return false;
+          }
+         }
+         document.onkeypress = stopRKey;
+         function myFunction() {
+          document.getElementById("barcode").focus();
+         }
+        
+      //// SUM OF AMOUNT
+      
+          $(document).on("change keyup", ".add", function() {
+              var sum = 0;
+              $(".amount").each(function(){
+                  sum += +$(this).val();
+              });
+              $("#total").val(sum);
+          });	
+              
+              
+              
+                  // Colone Items
+       
+          $(document).ready(function() {
+            $(".instl").click(function() {
+              $(".formi")
+                .eq(0)
+                .clone()
+                .find("input").val("").end() // ***
+                .show()
+                .insertAfter(".formi:last");
+              
+            });
+            $('.all').on('click', ".cancel", function() {
+                $(this).closest('.formi').remove();
+              });
+          });
+          
+          
+      // Remove Row  
+              function deleteRow() {
+          $('DIV.items').each(function(index, item){
+              jQuery(':checkbox', this).each(function () {
+                  if ($(this).is(':checked')) {
+                      $(item).remove();
+                  }
+              });
+          });
+      }
+      
+      
+          // SUM OF AMOUNT
+       
+           function add_calcualte () {
+           
+               var grandTotal = 0;
+               $("input[name='qty[]']").each(function(index) {
+                   var qty = $("input[name='qty[]']").eq(index).val();
+                   var rate = $("input[name='rate[]']").eq(index).val();
+                   var output = parseFloat(parseFloat(qty) * parseFloat(rate)).toFixed(2);
+                   if (!isNaN(output)) {
+                       $("input[name='amount[]']").eq(index).val(output);
+                       grandTotal = parseFloat(parseFloat(grandTotal) + parseFloat(output)).toFixed(2);
+                       $('#total').val(grandTotal);
+                       var paid = +$("#paid").val();
+                       $("#due").val(parseFloat(grandTotal -paid).toFixed(0));
+                   }
+               })
+               
+           }
+       
+       // Change Caculate Value
+           
+           $(".calculate").on('keyup change', function() {
+           
+               add_calcualte()
+               
+           })
+   </script>
+   
 
 </html>

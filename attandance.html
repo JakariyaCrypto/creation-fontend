@@ -256,171 +256,389 @@
          </div>
          <div id="layoutSidenav_content">
             <main>
-               <div class="container-fluid"> <form name="frmUser" method="get" action="preview_student.php" enctype="multipart/form-data" >
-<div class="mt-4 mb-3 page-title"> 
-	
-   <div class="row">
+                <div class="container-fluid"> 
  
-      <div class="col-md-7 m-auto">
-        Welcome to explore E-TCMS 1.0.1
-      </div>
-      <div class="col-md-3 text-right">
-        <input type="number" class="form-control" name="id" Placeholder="Enter Admission ID" autofocus >
-      </div>
-	       <div class="col-md-2 text-right">
-		    <input type="submit" name="submit" Value="Search" class="btn btn-primary btn-block ">
-		    </div>
-			
-   </div>
-   </form>
-</div>
-  <div class="wedget-statistic mb-3">
-<div class="row">
- <!--- Bill statisticS --->
-   <div class="col-md-3 col-xl-3">
-   <div class="bg-c-blue">
- 
-            <h1 class="text-right"><i class="fas fa-sync-alt f-left"></i>  <span style="font-size:15px;"> Unverified </span> </h1>
-        
-    
-            <br><a class="text-dark"href="list_new_applicaion.php">Pending Admission <span class="f-right">
-			2   </a></span>
-			   
-			   
-			     <br><a class="text-dark" href="list_free_collection_unverified.php">  Unauthorised Payment <span class="f-right">
-				 0   </a></span>
-			   
-			   
+ <div class="card mt-4">
      
-      </div>
-   </div>
-   <!--- Bill statisticS --->
+     <div class="card-header">
+    <div class="row">
+       <div class="col-md-9 my-auto">
+         <i class="far fa-list-alt"></i>  Attedance   <i class="fas fa-angle-right"></i> Attedance Entry
+       </div>
+       <div class="col-md-3 text-right">
    
-   <!--- client statisticS --->
-   <div class="col-md-3 col-xl-3">
-      <div class="bg-c-blue">
- 
-            <h1 class="text-right"><i class="fas fa-user-graduate f-left"></i> <span style="font-size:15px;"> Student Info </span> </h1>
-            <br>
-           <a class="text-dark" href="list_admission.php"> Current Student</a>
-		   <span class="f-right">
-               105            </span>
-            <br>
-			<a class="text-dark" href="list_course_completed.php">Ex Students</a> 
-			<span class="f-right"> 
-			
-			81 
-			   </span>
-         
-   
-      </div>
-   </div>
-   <!--- client statisticS --->
+          <a href="list_attendance.php" class="btn btn-outline-primary"> <i class="fas fa-folder-open text-warning"></i> Attedance Record</a>
+       </div>
+    </div>
+ </div>
+ <div class="card mb-4">
   
-     <!--- Day statisticS --->
-   <div class="col-md-3 col-xl-3">
-      <div class="bg-c-blue">
- 
-            <h1 class="text-right"><i class="fas fa-file-invoice f-left"></i> <span style="font-size:15px;"> Payment Info </span> </h1>
-            <br>
-            Today Fees Received<span class="f-right">
-                           </span>
-            <br><a class="text-dark" href="report_fees_dues.php">  Total Dues Payment </a>  <span class="f-right"> 
-			
-			-325500 
-			   </span>
-         
-   
-      </div>
-   </div>
-    <!--- Day statisticS --->
-	
-   <!--- Day statisticS --->
-   <div class="col-md-3 col-xl-3">
-     <div class="bg-c-blue">
- 
-            <h1 class="text-right"><i class="fas fa-chart-line f-left"></i> <span style="font-size:15px;"> General Account</span> </h1>
-            <br>
-            Income Today<span class="f-right">  </span>
-          
-			  <br> Expense Today<span class="f-right">  </span>
-        
-      </div>
-   </div>
-   </div>
-   </div>
-   <!--- Day statisticS --->
-
-<div class="row">
-   <div class="col-xl-6">
-      <div class="card mb-3">
-         <div class="card-header">
-            <i class="fas fa-chart-area mr-1"></i>
-           Collection Flow
-         </div>
-         <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="40"></canvas>
-         </div>
-      </div>
-   </div>
-   <div class="col-xl-6">
-      <div class="card mb-3">
-         <div class="card-header">
-            <i class="fas fa-chart-pie mr-1"></i>
-          Course Wise Admission
-         </div>
-         <div class="card-body">
-            <canvas id="myPieChart" width="100%" height="40"></canvas>
-         </div>
-      </div>
-   </div>
-</div>
-
-
-<div class="row">
-
- 
-
-
-   <div class="col-xl-6">
-      <div class="card mb-4">
-         <div class="card-header">
-            <i class="fas fa-check mr-1"></i>
-            Receiveable Fees Today
-         </div>
-         <div class="card-body">
-            <div style="overflow-y: scroll; max-height: 175px; padding-right: 30px;">
+    <div class="mt-3 card-body">
+    <div class="alert alert-warning">
+    Uncheck only those that were not present
+    </div>
+  <form name="frmUser" method="post" action="" enctype="multipart/form-data" >
+          <div class="form-row">
+                         
+             <div class="form-group col-md-6">
+             <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+              <input type="text" hidden name="admission_id[]" value="179"> 
+              <strong> 179.</strong>  Ruhul Amin 
+             
+             <div class="row">
+             <div  class="col-sm-3">
+             
+                  <select name="status[]"  class="form-control status" required  >
+           <option value="Present">Present</option>
+           <option value="Absent">Absent</option>
+           
+         </select>
+           </div>	 
+             <div class="col-sm-3">
+             <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+             </div>
+             <div class="col-sm-3">
+                 <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+           </div>
+         <div class="col-sm-3">
+             <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+           
+           </div>
+           </div>
+             </div>
+             </div>
+             
+                         
+             <div class="form-group col-md-6">
+             <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+              <input type="text" hidden name="admission_id[]" value="182"> 
+              <strong> 182.</strong>  Aysha Akther 
+             
+             <div class="row">
+             <div  class="col-sm-3">
+             
+                  <select name="status[]"  class="form-control status" required  >
+           <option value="Present">Present</option>
+           <option value="Absent">Absent</option>
+           
+         </select>
+           </div>	 
+             <div class="col-sm-3">
+             <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+             </div>
+             <div class="col-sm-3">
+                 <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+           </div>
+         <div class="col-sm-3">
+             <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+           
+           </div>
+           </div>
+             </div>
+             </div>
+             
+                         
+             <div class="form-group col-md-6">
+             <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+              <input type="text" hidden name="admission_id[]" value="186"> 
+              <strong> 186.</strong>  Ubaydul Haq Saif 
+             
+             <div class="row">
+             <div  class="col-sm-3">
+             
+                  <select name="status[]"  class="form-control status" required  >
+           <option value="Present">Present</option>
+           <option value="Absent">Absent</option>
+           
+         </select>
+           </div>	 
+             <div class="col-sm-3">
+             <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+             </div>
+             <div class="col-sm-3">
+                 <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+           </div>
+         <div class="col-sm-3">
+             <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+           
+           </div>
+           </div>
+             </div>
+             </div>
+             
+                         
+             <div class="form-group col-md-6">
+             <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+              <input type="text" hidden name="admission_id[]" value="187"> 
+              <strong> 187.</strong>  Mst.Sultana Begum 
+             
+             <div class="row">
+             <div  class="col-sm-3">
+             
+                  <select name="status[]"  class="form-control status" required  >
+           <option value="Present">Present</option>
+           <option value="Absent">Absent</option>
+           
+         </select>
+           </div>	 
+             <div class="col-sm-3">
+             <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+             </div>
+             <div class="col-sm-3">
+                 <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+           </div>
+         <div class="col-sm-3">
+             <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+           
+           </div>
+           </div>
+             </div>
+             </div>
+             
+                         
+             <div class="form-group col-md-6">
+             <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+              <input type="text" hidden name="admission_id[]" value="188"> 
+              <strong> 188.</strong>  MD.Ruhul Amin 
+             
+             <div class="row">
+             <div  class="col-sm-3">
+             
+                  <select name="status[]"  class="form-control status" required  >
+           <option value="Present">Present</option>
+           <option value="Absent">Absent</option>
+           
+         </select>
+           </div>	 
+             <div class="col-sm-3">
+             <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+             </div>
+             <div class="col-sm-3">
+                 <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+           </div>
+         <div class="col-sm-3">
+             <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+           
+           </div>
+           </div>
+             </div>
+             </div>
+             
+                         
+             <div class="form-group col-md-6">
+             <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+              <input type="text" hidden name="admission_id[]" value="189"> 
+              <strong> 189.</strong>  MD.Tasnim Hossen Tanim 
+             
+             <div class="row">
+             <div  class="col-sm-3">
+             
+                  <select name="status[]"  class="form-control status" required  >
+           <option value="Present">Present</option>
+           <option value="Absent">Absent</option>
+           
+         </select>
+           </div>	 
+             <div class="col-sm-3">
+             <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+             </div>
+             <div class="col-sm-3">
+                 <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+           </div>
+         <div class="col-sm-3">
+             <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+           
+           </div>
+           </div>
+             </div>
+             </div>
+             
+                         
+             <div class="form-group col-md-6">
+             <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+              <input type="text" hidden name="admission_id[]" value="193"> 
+              <strong> 193.</strong>  Showrav Deb 
+             
+             <div class="row">
+             <div  class="col-sm-3">
+             
+                  <select name="status[]"  class="form-control status" required  >
+           <option value="Present">Present</option>
+           <option value="Absent">Absent</option>
+           
+         </select>
+           </div>	 
+             <div class="col-sm-3">
+             <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+             </div>
+             <div class="col-sm-3">
+                 <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+           </div>
+         <div class="col-sm-3">
+             <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+           
+           </div>
+           </div>
+             </div>
+             </div>
+             
+                         
+             <div class="form-group col-md-6">
+             <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+              <input type="text" hidden name="admission_id[]" value="194"> 
+              <strong> 194.</strong>  Mahfuj Khan 
+             
+             <div class="row">
+             <div  class="col-sm-3">
+             
+                  <select name="status[]"  class="form-control status" required  >
+           <option value="Present">Present</option>
+           <option value="Absent">Absent</option>
+           
+         </select>
+           </div>	 
+             <div class="col-sm-3">
+             <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+             </div>
+             <div class="col-sm-3">
+                 <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+           </div>
+            <div class="col-sm-3">
+                <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
             
-
-               <ul>
-
-                  There are no installments today
-               </ul>
             </div>
-         </div>
-      </div>
-   </div>
-
-
-
-   <div class="col-xl-6">
-      <div class="card mb-4">
-         <div class="card-header">
-            <i class="fas fa-check-circle mr-1"></i>
-         Today's  Fees Collection
-         </div>
-         <div class="card-body">
-            <div style="overflow-y: scroll; max-height: 175px; padding-right: 30px;">
-                              <ul>
-                  No Collection Yet
-               </ul>
             </div>
-         </div>
-      </div>
-   </div>
-
-</div>
- </main>
+                </div>
+                </div>
+                
+                            
+                <div class="form-group col-md-6">
+                <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+                <input type="text" hidden name="admission_id[]" value="199"> 
+                <strong> 199.</strong>  Md.Redwan Khan 
+                
+                <div class="row">
+                <div  class="col-sm-3">
+                
+                    <select name="status[]"  class="form-control status" required  >
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            
+            </select>
+            </div>	 
+                <div class="col-sm-3">
+                <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+                </div>
+                <div class="col-sm-3">
+                    <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+            </div>
+            <div class="col-sm-3">
+                <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+            
+            </div>
+            </div>
+                </div>
+                </div>
+                
+                            
+                <div class="form-group col-md-6">
+                <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+                <input type="text" hidden name="admission_id[]" value="201"> 
+                <strong> 201.</strong>  Nahida Tabassum Jannath 
+                
+                <div class="row">
+                <div  class="col-sm-3">
+                
+                    <select name="status[]"  class="form-control status" required  >
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            
+            </select>
+            </div>	 
+                <div class="col-sm-3">
+                <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+                </div>
+                <div class="col-sm-3">
+                    <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+            </div>
+            <div class="col-sm-3">
+                <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+            
+            </div>
+            </div>
+                </div>
+                </div>
+                
+                            
+                <div class="form-group col-md-6">
+                <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+                <input type="text" hidden name="admission_id[]" value="202"> 
+                <strong> 202.</strong>  Sayla Akther 
+                
+                <div class="row">
+                <div  class="col-sm-3">
+                
+                    <select name="status[]"  class="form-control status" required  >
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            
+            </select>
+            </div>	 
+                <div class="col-sm-3">
+                <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+                </div>
+                <div class="col-sm-3">
+                    <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+            </div>
+            <div class="col-sm-3">
+                <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+            
+            </div>
+            </div>
+                </div>
+                </div>
+                
+                            
+                <div class="form-group col-md-6">
+                <div style="border: 1px solid #eee; padding: 8px; border-radius: 12px;line-height: 30px;">
+                <input type="text" hidden name="admission_id[]" value="203"> 
+                <strong> 203.</strong>  Noor Alom 
+                
+                <div class="row">
+                <div  class="col-sm-3">
+                
+                    <select name="status[]"  class="form-control status" required  >
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            
+            </select>
+            </div>	 
+                <div class="col-sm-3">
+                <input type="text" class="form-control" name="remark[]" placeholder="Remark"> 
+                </div>
+                <div class="col-sm-3">
+                    <input type="time" class="form-control" name="intime[]" placeholder="In Time"> 
+            </div>
+            <div class="col-sm-3">
+                <input type="time" class="form-control" name="outtime[]" placeholder="Out Time"> 
+            
+            </div>
+            </div>
+                </div>
+                </div>
+                
+                        
+    
+                </div>
+            
+            
+            <hr>
+            <input type="submit" name="save" value="Submit" id="register" class="btn btn-primary ">
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </form>
+        </div>
+    </div>
+  </main>
  
 </div>
 </div>

@@ -313,12 +313,13 @@ table.dataTable {
 }
 
 .dahboard-btn {
-    background: #007bff;
-    /* color: #7b2f2f!important; */
-    margin: 6px;
-    margin-bottom: 12px;
-    border-radius: 16px;
+	background: #ea4d38;
+	/* color: #7b2f2f !important; */
+	margin: 6px;
+	margin-bottom: 12px;
+	border-radius: 16px;
 }
+
 .note-editor .note-toolbar {
     background-color: #d6c2f56b;
     border-bottom: 1px solid #edecec;
